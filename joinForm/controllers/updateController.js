@@ -34,5 +34,4 @@ exports.updateData = async (req, res) => {
         res.redirect("/board/read/" + id);
     }
 
-    res.redirect("/board");
 };
