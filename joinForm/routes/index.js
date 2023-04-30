@@ -1,9 +1,10 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+var model = require("../models");
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-module.exports = router;
+module.exports = async (req, res) => {
+    let result = await model.boards.findAll({}).catch((err) => console.log(err));
+    console.log(result);
+    res.render("index", { title: "Express", rows: result });
+};
