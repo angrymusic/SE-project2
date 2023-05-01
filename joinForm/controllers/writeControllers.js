@@ -9,6 +9,7 @@ exports.writeData = async (req, res) => {
         creator_id: req.body.creator_id,
         title: req.body.title,
         content: req.body.content,
+        img: `/images/${req.file.filename}`,
         passwd: req.body.passwd,
     };
 
